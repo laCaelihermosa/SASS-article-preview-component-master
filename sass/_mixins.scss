@@ -1,0 +1,50 @@
+@use 'variables';
+
+@mixin desktop {    
+    @media (min-width:745px){
+        margin: 270px auto 75px;
+        width: 735px;
+        height: 280px;
+        display: flex;  
+        .card{                   
+            &__picture{
+                background-position-y: unset;
+                height: 100%;
+                border-radius: 12px 0 0 12px;
+            }
+            &__content{
+                padding: 40px 60px 30px 40px;   
+                &__title{
+                    margin: 0 0 20px;
+                    font-size: 1.5em;
+                    line-height: 26px;
+                }
+                &__description{
+                    margin: 0 0 20px;
+                }
+                &__button{
+                    right: 50px;
+                    bottom: 30px;
+                }
+                &__profile{
+                    margin: 0;
+                }
+                &__share-icons{
+                    bottom: 80px;
+                    right: -60px;
+                    border-radius: 8px;
+                    width: 250px;
+                    height: 56px;
+                }
+                &__share-icons::after{
+                    content: "";
+                    border: 10px solid;
+                    border-color: variables.$Very-Dark-Grayish-Blue transparent transparent;
+                    position: absolute;
+                    top: 100%;
+                    left: 115px;
+                }
+            }    
+        }    
+    }
+}    

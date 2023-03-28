@@ -1,0 +1,110 @@
+@use 'variables';
+@use 'initial-setup.scss';
+@use 'mixins';
+@use 'footer';
+
+.card{
+    width: 330px;
+    height: 518px;
+    margin: 75px auto;
+    border-radius: 12px;
+    background-color: variables.$White;
+    position: relative;
+    &__picture{
+        width: 100%;
+        height: 200px;
+        background: url(./images/drawers.jpg);
+        background-size: cover;
+        background-position-y: -20px;
+        margin-bottom: 32px; 
+        border-radius: 12px 12px 0 0;
+    }
+    &__content{
+        &__title{
+            color: variables.$Very-Dark-Grayish-Blue;
+            margin: 0 30px 12px;
+            font-size: 1.24em;
+            line-height: 24px;
+        }
+        &__description{
+            color: variables.$Desaturated-Dark-Blue;
+            margin: 0 42px 30px 30px;
+            font-size: 1.00em;
+            line-height: 20px;
+        }
+        &__button{
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 7px 8px;
+            background-color: variables.$Light-Grayish-Blue;
+            z-index: 1;
+            transition: 300ms;
+        }
+        &__button:hover{
+            cursor: pointer;
+            background-color: variables.$Desaturated-Dark-Blue;
+        }
+        &__button:hover path{
+            fill:variables.$White;
+        }
+        /*--------------------icon-Shared--------------------*/
+        &__share-icons{
+            position: absolute;
+            bottom: 0;
+            background-color: variables.$Very-Dark-Grayish-Blue;
+            width: 100%;
+            height: 80px;
+            padding: 20px;
+            display: none;
+            gap: 5px;
+            align-items: center;
+            border-radius: 0 0 12px 12px;         
+        }
+        &__share-icons__share{
+            color: variables.$Grayish-Blue;
+            letter-spacing: 4px;
+            margin-right: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        &__share-icons__icon{
+            margin: 0 8px;    
+        }
+        /*--------------------Profile-------------------------*/
+        &__profile{
+        margin: 0 30px 30px;
+        display: flex;  
+        opacity: 1;
+            &__picture{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+            &__name {
+                margin: 4px 0 2px 15px;
+                color: variables.$Very-Dark-Grayish-Blue;
+                font-weight: 700;
+            }
+            &__date{
+                margin-left: 15px;
+                color: variables.$Grayish-Blue;
+            }
+        }    
+    }
+    @include mixins.desktop;
+}
+.show{
+    display: flex;
+}
+.rotate{
+    background-color: variables.$Desaturated-Dark-Blue;
+    transition: 300ms;
+    transform: scale(1.1) rotate(315deg);
+}
+.rotate path{
+    fill: white;
+}
